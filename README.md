@@ -38,6 +38,21 @@ conda install scikit-image scikit-learn
 conda install seaborn matplotlib
 conda install xlrd pathlib pandas
 ```
+
+### Local installation
+
+To install the code locally on your computer and in order to be able to edit it, first download it from github to your computer, go to one directory above where your code folder is
+downloaded/located/saved, through an anaconda3 terminal, the structure of the directory would look like this:
+```
+dir/
+ Astro/
+      setup.py
+      README.md
+```
+type ```pip install -e Astro``` in the same terminal. The ```-e``` allows one to edit the program.
+  
+All the required packages will be installed automatically from ``` setup.py ``` file.
+
 ### Github installation
 To install it directly from github:
     ``` pip install git+https://github.com/MichelaMarini/Morphological-analysis-of-astrocytes.git ```
