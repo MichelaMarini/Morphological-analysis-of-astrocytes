@@ -1,4 +1,4 @@
-![image](https://github.com/MichelaMarini/Morphological-analysis-of-astrocytes/assets/70772881/6ec684cb-f86b-4a7d-a6eb-e027bf914746)
+![image](https://github.com/MichelaMarini/Morphological-analysis-of-astrocytes/blob/main/images/title.png)
 
 
 ## **Purpose and Use Case**
