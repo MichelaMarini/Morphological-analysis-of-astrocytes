@@ -77,7 +77,7 @@ def statistical_analysis(path):
         
         # Iterate over each feature
         for feature in df.columns:
-            print("feature", feature)
+            
             if feature != 'LABEL':
                 # Create an empty list to store the feature values for each label
                 feature_values_tot = []
