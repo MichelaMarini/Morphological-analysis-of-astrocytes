@@ -35,7 +35,7 @@ from sklearn.neighbors import KernelDensity
 
 
 
-sns.set(context='paper', style='white', font_scale=1.5, rc={"lines.linewidth": 2.5, 'font.family': 'Arial'})
+sns.set(context='paper', style='white', font_scale=1.5, rc={"lines.linewidth": 2.5}) #, 'font.family': 'Arial'
 sns.set_palette('muted')
 
 
@@ -178,7 +178,7 @@ def morphological_analysis(path):
     for i, feature_name in enumerate(shape_feats_list):
         # Create a new figure for each feature
         fig, ax = plt.subplots(figsize=(8, 6))
-        fig.suptitle(f'{shape_feats_list[i]}', fontsize=16, fontfamily='Arial')
+        fig.suptitle(f'{shape_feats_list[i]}', fontsize=16)
     
         # Create a list of colors for each class
         class_colors = ['blue', 'red', 'green']
@@ -218,10 +218,10 @@ def morphological_analysis(path):
             
             ax.plot([class_means[j], class_means[j]], [0, y_max_tot[j]], color=class_colors[j], linestyle='--') #, alpha=0.75
             
-            legend = ax.legend(prop={'size': 16, 'family': 'Arial'})
+            legend = ax.legend(prop={'size': 16})
             for text in legend.get_texts():
                 text.set_fontsize(16)
-                text.set_fontfamily('Arial')
+                # text.set_fontfamily('Arial')
             
                        
         ax.set_xticks([0, 0.2, 0.4, 0.6, 0.8, 1])
@@ -354,7 +354,7 @@ def morphological_analysis(path):
                     upper_matrix_tot[x, y] = tot_distance_matrix[x, y]
                     
     im = plt.imshow(upper_matrix_tot, cmap='Blues') 
-    plt.title(f'Wasserstein Distance Matrices of {filename}', fontfamily='Arial', pad=12)
+    plt.title(f'Wasserstein Distance Matrices of {filename}', pad=12)
     plt.yticks([])
     plt.xticks(tick_positions, tick_labels)
     #plt.yticks(tick_positions, tick_labels)
