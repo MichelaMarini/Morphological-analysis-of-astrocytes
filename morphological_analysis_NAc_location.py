@@ -225,7 +225,7 @@ plot distribution for each feature
 for i, feature_name in enumerate(shape_feats_list):
     # Create a new figure for each feature
     fig, ax = plt.subplots(figsize=(8, 6))
-    fig.suptitle(f'Distribution of {shape_feats_list[i]}', fontsize=16, fontfamily='Arial')
+    fig.suptitle(f'Distribution of {shape_feats_list[i]}', fontsize=16)
 
     # Create a list of colors for each class
     class_colors = ['blue', 'red', 'green', 'yellow', 'purple']
@@ -279,7 +279,7 @@ by feature
 # for i, feature_name in enumerate(shape_feats_list):
 #     # Create a new figure for each feature
 #     fig, ax = plt.subplots(figsize=(8, 6))
-#     fig.suptitle(f'{shape_feats_list[i]}', fontsize=24, fontfamily='Arial', y=0.88)
+#     fig.suptitle(f'{shape_feats_list[i]}', fontsize=24, y=0.88)
 
 #     # Create a list of colors for each class
 #     class_colors = ['#FF6BA9',  # Pink
@@ -344,7 +344,7 @@ by feature
 #     ax.plot([class_means[1], class_means[1]], [0, y_max_tot[1]], color='black', linestyle='--', alpha=0.75)
 #     #ax.plot([class_means[2], class_means[2]], [0, y_max_tot[2]], color='black', linestyle='--', alpha=0.75)
 
-#     legend = ax.legend(prop={'size': 16, 'family': 'Arial'})
+#     legend = ax.legend(prop={'size': 16})
 #     for text in legend.get_texts():
 #         text.set_fontsize(16)
 #         text.set_fontfamily('Arial')
@@ -438,7 +438,7 @@ for i in range(len(shape_feats_list)):
     # Plot the distance matrix
     ax = axs[i // 5, i % 5]
     im = ax.imshow(distance_matrix, cmap='Blues')  
-    ax.set_title(shape_feats_list[i], fontsize=20, fontfamily='Arial', pad=15)
+    ax.set_title(shape_feats_list[i], fontsize=20, pad=15)
     ax.set_xticks(range(5))
     ax.set_yticks(range(5))
     ax.set_xticklabels(populations)
@@ -476,7 +476,7 @@ for i in range(num_features):
     ax = axs[i // 5, i % 5]
       
     im = ax.imshow(distance_matrix_upper[i], cmap='Blues', vmax=max_value)  
-    ax.set_title(shape_feats_list[i], fontsize=16, fontfamily='Arial', pad=12)
+    ax.set_title(shape_feats_list[i], fontsize=16, pad=12)
     
     # Set labels only for external sides
     if i // 5 == num_features // 5 - 1:  # Bottom row
@@ -552,7 +552,7 @@ for x in range(5):
                 upper_matrix_tot[x, y] = tot_distance_matrix[x, y]
                 
 plt.imshow(upper_matrix_tot, cmap='Blues') 
-plt.title('Aggregated distance matrix', fontfamily='Arial', pad=12)
+plt.title('Aggregated distance matrix', pad=12)
 plt.xticks(tick_positions, tick_labels)
 plt.yticks(tick_positions, tick_labels)
 plt.colorbar(location='right') 
