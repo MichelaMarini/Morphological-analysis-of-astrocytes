@@ -7,7 +7,7 @@ The repository cointains the following script:
 - to add
 2) Drug use and natural reward
   - [Classification of stages of addictions](https://github.com/MichelaMarini/Morphological-analysis-of-astrocytes/blob/main/classification_drug_use_natural_reward.py): single-cell classification of addiction-related behavior (control, withdrawal relapse) based on Random Forest
-  - to add
+  - [Statistical analysis](https://github.com/MichelaMarini/Morphological-analysis-of-astrocytes/blob/main/statistical_analysis_drug_use_natural_reward.py): ANOVA and Turkey HSD test on single-cell features
   - to add
 
 The repository cointains the following data: 
