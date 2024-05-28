@@ -1,6 +1,6 @@
 ## **File description**
 
-The repository cointains the following script:
+The repository cointains the following scripts:
 1) NAc Locations
  - [Classification of NAc Location](https://github.com/MichelaMarini/Morphological-analysis-of-astrocytes/blob/main/classification_anatomical_location.py): single-cell classification of NAc locations (AC, DM, LAT, VM, PC) based on Random Forest
  - [Statistical analysis](https://github.com/MichelaMarini/Morphological-analysis-of-astrocytes/blob/main/statistical_analysis_NAc_Location.py): ANOVA and Turkey HSD test on single-cell features
