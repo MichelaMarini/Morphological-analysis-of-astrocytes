@@ -364,7 +364,7 @@ def morphological_analysis(path):
     # Set the colorbar alpha (transparency) to 0 to hide it
     cbar.set_alpha(0.0)
     
-    # plt.savefig(f'EMD Matrix {filename}.png', dpi=300, bbox_inches='tight')
+    plt.savefig(f'EMD Matrix {filename}.png', dpi=300, bbox_inches='tight')
     plt.show()
 
 
