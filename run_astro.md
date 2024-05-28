@@ -14,6 +14,6 @@ The repository cointains the following data:
 1) [Features](https://github.com/MichelaMarini/Morphological-analysis-of-astrocytes/tree/main/r): cvs files cointaining all the extracted single-cell features 
 2) [Original data](https://github.com/MichelaMarini/Morphological-analysis-of-astrocytes/releases/tag/v.1.0.0)
 
-## **Running on Colab**
+<!--  ## **Running on Colab**
 A friendly-user Google Colab version is designed for running the code.
-[![Open Google Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://github.com/dlabate/SPACe/blob/main/SPACe_colab.ipynb) 
+[![Open Google Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://github.com/dlabate/SPACe/blob/main/SPACe_colab.ipynb) -->
