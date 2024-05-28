@@ -33,7 +33,7 @@ from sklearn.decomposition import PCA
 from scipy.stats import wasserstein_distance
 
 
-sns.set(context='paper', style='white', font_scale=1.5, rc={"lines.linewidth": 2.5, 'font.family': 'Arial'}) #sans-serif
+sns.set(context='paper', style='white', font_scale=1.5, rc={"lines.linewidth": 2.5}) #'font.family': 'Arial'
 sns.set_palette('muted')
 
 
