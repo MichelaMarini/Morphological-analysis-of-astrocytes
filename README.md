@@ -14,7 +14,7 @@ The pipeline consist of four processing units, i.e., (1) [astrocyte detection](h
 Linux, Windows and Mac OS are supported for running the code. At least 8GB of RAM is required to run the software. The software has been tested on Windows 11 and less well-tested on Mac OS. Please open an issue if you have problems with installation.
 
 ### Dependencies 
-The code relies on the following excellent packages (which are automatically installed with conda/pip if missing):
+The code relies on the following excellent packages:
 
 [numpy](https://github.com/numpy/numpy)
 [scipy](https://github.com/scipy/scipy) <br>
