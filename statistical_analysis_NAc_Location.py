@@ -182,8 +182,8 @@ latex_p_values = tabulate(df_p_values, headers='keys', tablefmt='latex')
 latex_p_num_values = tabulate(df_p_num_values, headers='keys', tablefmt='latex')
 
 # Print LaTeX code 
-print("LaTeX code for P Values Table:")
-print(latex_p_values)
-print("\nLaTeX code for P Num Values Table:")
-print(latex_p_num_values)
+# print("LaTeX code for P Values Table:")
+# print(latex_p_values)
+# print("\nLaTeX code for P Num Values Table:")
+# print(latex_p_num_values)
 
