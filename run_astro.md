@@ -15,5 +15,5 @@ The repository cointains the following data:
 2) [Original data](https://github.com/MichelaMarini/Morphological-analysis-of-astrocytes/releases/tag/v.1.0.0)
 
 ## **Running on Colab**
-A Google Colab version is designed for demo.
+A Google Colab version is provided as a demo
 [![Open Google Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://github.com/MichelaMarini/Morphological-analysis-of-astrocytes/blob/main/astrocytes_demo.ipynb)
