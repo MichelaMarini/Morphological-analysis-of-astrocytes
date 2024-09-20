@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/789067454.svg)](https://zenodo.org/doi/10.5281/zenodo.13821424)
+
 ![image](https://github.com/MichelaMarini/Morphological-analysis-of-astrocytes/blob/main/images/title.png)
 
 
