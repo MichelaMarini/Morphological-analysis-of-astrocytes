@@ -1,7 +1,6 @@
-[![DOI](https://zenodo.org/badge/789067454.svg)](https://zenodo.org/doi/10.5281/zenodo.13821424)
-
 ![image](https://github.com/MichelaMarini/Morphological-analysis-of-astrocytes/blob/main/images/title.png)
 
+[![DOI](https://zenodo.org/badge/789067454.svg)](https://zenodo.org/doi/10.5281/zenodo.13821424)
 
 ## **Purpose and Use Case**
 Astrocyte image analysis pipeline to automatically extract and analyze single-cell phenotypic profiles of astrocytes in micrographs. 
