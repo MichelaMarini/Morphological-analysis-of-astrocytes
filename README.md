@@ -43,7 +43,7 @@ To install it directly from github:
 
 ## **Data availability**
 
-The images are available for download [here](https://github.com/MichelaMarini/Morphological-analysis-of-astrocytes/releases/tag/v.1.1.0)
+The images are available for download [here](https://github.com/MichelaMarini/Morphological-analysis-of-astrocytes/releases/tag/v.1.0.0)
 
 ## **Running the program**
 To learn how to use the program, go to [run_astro.md](https://github.com/MichelaMarini/Morphological-analysis-of-astrocytes/blob/main/run_astro.md).
