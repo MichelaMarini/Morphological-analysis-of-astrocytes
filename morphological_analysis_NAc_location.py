@@ -195,7 +195,7 @@ for i, feature_name in enumerate(shape_feats_list):
    
 
 plt.tight_layout(rect=[0, 0.03, 1, 0.95]) #title position
-plt.savefig('Distribution of features for different classes.png', dpi=300, bbox_inches='tight')
+# plt.savefig('Distribution of features for different classes.png', dpi=300, bbox_inches='tight')
 plt.show()
 
 
@@ -268,7 +268,7 @@ for i, feature_name in enumerate(shape_feats_list):
         # print("y_max_tot", y_max_tot[j], class_colors[j])
         
     plt.tight_layout(rect=[0, 0.03, 1, 0.95])  # title position
-    plt.savefig(f'Distribution of {shape_feats_list[i]}', dpi=300, bbox_inches='tight')
+    # plt.savefig(f'Distribution of {shape_feats_list[i]}', dpi=300, bbox_inches='tight')
     plt.show()
 
 '''
@@ -353,7 +353,7 @@ for i, feature_name in enumerate(shape_feats_list):
     ax.tick_params(axis='y', labelsize=16)
     
     plt.tight_layout(rect=[0, 0.03, 1, 0.95])  # title position
-    # plt.savefig(f'distribution of {shape_feats_list[i]}', dpi=300, bbox_inches='tight')
+    plt.savefig(f'distribution of {shape_feats_list[i]}', dpi=300, bbox_inches='tight')
     plt.show()
 
 
