@@ -123,25 +123,24 @@ population_features = {
     'dm': features_dm,
 }
 
-# for pop, data in population_features.items():
-#     fig, axs = plt.subplots(3, 5, figsize=(20, 10), sharex=True, sharey=True)
-#     fig.suptitle(pop, fontsize=16)
+for pop, data in population_features.items():
+    fig, axs = plt.subplots(3, 5, figsize=(20, 10), sharex=True, sharey=True)
+    fig.suptitle(pop, fontsize=16)
     
-#     # Loop through the features and plot normalized histograms
-#     for i in range(len(shape_feats_list)):
-#         ax = axs[i // 5, i % 5]
-        
-#         # Extract normalized y-values for the current feature
-#         y_values = data[:, i].flatten()
+    # Loop through the features and plot normalized histograms
+    for i in range(len(shape_feats_list)):
+        ax = axs[i // 5, i % 5]
+                # Extract normalized y-values for the current feature
+        y_values = data[:, i].flatten()
        
-#         # Plot the histogram and get histogram values (heights) and bin edges (x values)
-#         heights, bin_edges, _ = ax.hist(y_values, color='lightgreen', edgecolor='black', bins=int(np.sqrt(min_length)), density=True)
+        # Plot the histogram and get histogram values (heights) and bin edges (x values)
+        heights, bin_edges, _ = ax.hist(y_values, color='lightgreen', edgecolor='black', bins=int(np.sqrt(min_length)), density=True)
         
-#         ax.set_title(shape_feats_list[i])
-#         # Print x values and corresponding histogram heights
-#         # print(f"Feature: {shape_feats_list[i]}")
-#         # print("y_values", len(y_values))
-#         # print("heights:", heights)
+        ax.set_title(shape_feats_list[i])
+        # Print x values and corresponding histogram heights
+        # print(f"Feature: {shape_feats_list[i]}")
+        # print("y_values", len(y_values))
+        # print("heights:", heights)
 #         # print("Histogram Heights normalized:", normalized_heights)
 #         # # Calculate the integral of the normalized histogram
 #         # integral = np.sum(normalized_heights * bin_widths)
@@ -149,8 +148,8 @@ population_features = {
 #         # print(f"Feature: {shape_feats_list[i]}")
 #         # print("Integral of the normalized histogram:", integral)
 
-#     plt.tight_layout(rect=[0, 0.03, 1, 0.95])  # Adjust title position
-#     plt.show()
+    plt.tight_layout(rect=[0, 0.03, 1, 0.95])  # Adjust title position
+    plt.show()
 
 
 
@@ -276,86 +275,86 @@ for i, feature_name in enumerate(shape_feats_list):
 uncomment the code below if you want to plot the distributions for the most 2 separeted classes
 by feature
 '''
-# for i, feature_name in enumerate(shape_feats_list):
-#     # Create a new figure for each feature
-#     fig, ax = plt.subplots(figsize=(8, 6))
-#     fig.suptitle(f'{shape_feats_list[i]}', fontsize=24, y=0.88)
+for i, feature_name in enumerate(shape_feats_list):
+    # Create a new figure for each feature
+    fig, ax = plt.subplots(figsize=(8, 6))
+    fig.suptitle(f'{shape_feats_list[i]}', fontsize=24, y=0.88)
 
 #     # Create a list of colors for each class
-#     class_colors = ['#FF6BA9',  # Pink
-#                  '#FFDB58',  # Yellow
-#                  '#87CEEB',  # Blue
-#                  '#808080',  # Gray
-#                  '#9ACD32']  # Green
+    class_colors = ['#FF6BA9',  # Pink
+                 '#FFDB58',  # Yellow
+                 '#87CEEB',  # Blue
+                 '#808080',  # Gray
+                 '#9ACD32']  # Green
 #     #['#FFD6F1', '#FFF2CC', '#DEEBF7', '#E2F0D9', '#C3C3C3'] 
 #     #['blue', 'red', 'green', 'yellow', 'purple']
 
-#     # Lists to store the means for each class
-#     class_means = []
-#     y_max_tot = []
-#     # Extract normalized y-values for the current feature for all classes
-#     y_values_all = [data[:, i].flatten() for class_name, data in population_features.items()]
-#     y_values_all_means = [np.median(y_values) for y_values in y_values_all] #np.median(y_values)
+    # Lists to store the means for each class
+    class_means = []
+    y_max_tot = []
+    # Extract normalized y-values for the current feature for all classes
+    y_values_all = [data[:, i].flatten() for class_name, data in population_features.items()]
+    y_values_all_means = [np.median(y_values) for y_values in y_values_all] #np.median(y_values)
 
-#     # Find the indices of the classes with minimum and maximum mean values
-#     min_mean_idx = np.argmin(y_values_all_means)
-#     max_mean_idx = np.argmax(y_values_all_means)
+    # Find the indices of the classes with minimum and maximum mean values
+    min_mean_idx = np.argmin(y_values_all_means)
+    max_mean_idx = np.argmax(y_values_all_means)
     
     
 #     # Remove the max and min values
-#     y_values_without_min_max = np.delete(y_values_all_means, [min_mean_idx, max_mean_idx])
+    y_values_without_min_max = np.delete(y_values_all_means, [min_mean_idx, max_mean_idx])
     
-#     # Find index of the element before the max value
-#     value_before_max = np.max(y_values_without_min_max)
+    # Find index of the element before the max value
+    value_before_max = np.max(y_values_without_min_max)
     
-#     # Find the index of value_before_max in y_values_all_means
-#     index_before_max = np.where(y_values_all_means == value_before_max)[0][0]
+    # Find the index of value_before_max in y_values_all_means
+    index_before_max = np.where(y_values_all_means == value_before_max)[0][0]
     
-#     # Find index of the element after the min value
-#     value_after_min = np.min(y_values_without_min_max)
+    # Find index of the element after the min value
+    value_after_min = np.min(y_values_without_min_max)
     
-#     # Find the index of value_after_min in y_values_all_means
-#     index_after_min = np.where(y_values_all_means == value_after_min)[0][0]
+    # Find the index of value_after_min in y_values_all_means
+    index_after_min = np.where(y_values_all_means == value_after_min)[0][0]
     
 
-#     # Plot lines for classes with minimum and maximum mean values
-#     for j, (class_name, data) in enumerate(population_features.items()):
-#         print("class_name", class_name)
-#         print("y_values_all_means", y_values_all_means)
-#         print("shape_feats_list[i]", shape_feats_list[i])
-#         if j == min_mean_idx or j == max_mean_idx: #or j == index_after_min
-#             # Extract normalized y-values for the current feature
-#             y_values = data[:, i].flatten()
-#             midpoints = np.linspace(min(y_values), max(y_values), 100)  # Create midpoints for the line plot
-#             kernel = scipy.stats.gaussian_kde(y_values)
-#             pdf_values = kernel(midpoints)
+    # Plot lines for classes with minimum and maximum mean values
+    for j, (class_name, data) in enumerate(population_features.items()):
+        print("class_name", class_name)
+        print("y_values_all_means", y_values_all_means)
+        print("shape_feats_list[i]", shape_feats_list[i])
+        if j == min_mean_idx or j == max_mean_idx: #or j == index_after_min
+            # Extract normalized y-values for the current feature
+            y_values = data[:, i].flatten()
+            midpoints = np.linspace(min(y_values), max(y_values), 100)  # Create midpoints for the line plot
+            kernel = scipy.stats.gaussian_kde(y_values)
+            pdf_values = kernel(midpoints)
 
-#             # Plot the line
-#             line, = ax.plot(midpoints, pdf_values, color='black')
-#             ax.fill_between(midpoints, pdf_values, alpha=0.35, color=class_colors[j], label=class_name)
+            # Plot the line
+            line, = ax.plot(midpoints, pdf_values, color='black')
+            ax.fill_between(midpoints, pdf_values, alpha=0.35, color=class_colors[j], label=class_name)
 
-#             # Store max y-value for dashed line
-#             y_max_tot.append(max(pdf_values))
-#             class_means.append(midpoints[np.argmax(pdf_values)])
+            # Store max y-value for dashed line
+            y_max_tot.append(max(pdf_values))
+            class_means.append(midpoints[np.argmax(pdf_values)])
            
 
-#     # Plot dashed lines for min and max mean classes
-#     ax.plot([class_means[0], class_means[0]], [0, y_max_tot[0]], color='black', linestyle='--', alpha=0.75)
-#     ax.plot([class_means[1], class_means[1]], [0, y_max_tot[1]], color='black', linestyle='--', alpha=0.75)
-#     #ax.plot([class_means[2], class_means[2]], [0, y_max_tot[2]], color='black', linestyle='--', alpha=0.75)
+    # Plot dashed lines for min and max mean classes
+    ax.plot([class_means[0], class_means[0]], [0, y_max_tot[0]], color='black', linestyle='--', alpha=0.75)
+    ax.plot([class_means[1], class_means[1]], [0, y_max_tot[1]], color='black', linestyle='--', alpha=0.75)
+    #ax.plot([class_means[2], class_means[2]], [0, y_max_tot[2]], color='black', linestyle='--', alpha=0.75)
 
-#     legend = ax.legend(prop={'size': 16})
-#     for text in legend.get_texts():
-#         text.set_fontsize(16)
-#         text.set_fontfamily('Arial')
+    legend = ax.legend(prop={'size': 16})
+    for text in legend.get_texts():
+        text.set_fontsize(16)
+        text.set_fontfamily('Arial')
 
-#     ax.set_xticks([0, 0.2, 0.4, 0.6, 0.8, 1])
-#     ax.tick_params(axis='x', labelsize=16)
-#     ax.tick_params(axis='y', labelsize=16)
+    ax.set_xticks([0, 0.2, 0.4, 0.6, 0.8, 1])
+    ax.tick_params(axis='x', labelsize=16)
+    ax.tick_params(axis='y', labelsize=16)
     
-#     plt.tight_layout(rect=[0, 0.03, 1, 0.95])  # title position
-#     # plt.savefig(f'distribution of {shape_feats_list[i]}', dpi=300, bbox_inches='tight')
-#     plt.show()
+    plt.tight_layout(rect=[0, 0.03, 1, 0.95])  # title position
+    # plt.savefig(f'distribution of {shape_feats_list[i]}', dpi=300, bbox_inches='tight')
+    plt.show()
 
 
 
