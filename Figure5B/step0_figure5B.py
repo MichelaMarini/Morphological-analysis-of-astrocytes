@@ -65,11 +65,11 @@ for filename in all_filenames:
             df[col] = scaler.fit_transform(col_data).flatten()
 
     # Compute mean per condition
-    means = df.groupby('condition')[feature_cols].mean().reset_index()
+    medians = df.groupby('condition')[feature_cols].median().reset_index()
     
     print("subregion", subregion)
     # Melt into long format
-    melted = means.melt(id_vars='condition', var_name='feature', value_name='value')
+    melted = medians.melt(id_vars='condition', var_name='feature', value_name='value')
     melted['subregion'] = subregion
     melted['treatment'] = treatment
     melted.dropna(subset=['value'], inplace=True)
@@ -119,7 +119,7 @@ header_rows.columns = range(len(level0))
 df_final.columns = range(df_final.shape[1])
 
 # Save to Excel with manual headers
-with pd.ExcelWriter("heatmap_mean_values.xlsx", engine="xlsxwriter") as writer:
+with pd.ExcelWriter("heatmap_median_values.xlsx", engine="xlsxwriter") as writer:
     header_rows.to_excel(writer, index=False, header=False, startrow=0)
     df_final.to_excel(writer, index=False, header=False, startrow=2)
 

@@ -10,7 +10,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
 
-df = pd.read_excel('heatmap_mean_values.xlsx', header=[0, 1])
+df = pd.read_excel('heatmap_median_values.xlsx', header=[0, 1])
 
 shape_feats_list = ['area','area filled', 'equivalent diameter area', 'feret diameter max',
   'eccentricity', 'perimeter', 'perimeter to surface ratio', 'sphericity',
@@ -74,70 +74,68 @@ withdrawal_df_sucrose = df_sucrose[df_sucrose[('sucrose', 'class')] == 'withdraw
 relapse_df_sucrose = df_sucrose[df_sucrose[('sucrose', 'class')] == 'relapse'].droplevel(0, axis=1)
 
 control_df_opioids = control_df_opioids.drop(columns='class')
-control_df_opioids_mean = control_df_opioids.values
+control_df_opioids_median = control_df_opioids.values
 
 withdrawal_df_opioids = withdrawal_df_opioids.drop(columns='class')
-withdrawal_df_opioids_mean = withdrawal_df_opioids.values
+withdrawal_df_opioids_median = withdrawal_df_opioids.values
 
 relapse_df_opioids = relapse_df_opioids.drop(columns='class')
-relapse_df_opioids_mean = relapse_df_opioids.values
+relapse_df_opioids_median = relapse_df_opioids.values
 
 control_df_sucrose = control_df_sucrose.drop(columns='class')
-control_df_sucrose_mean = control_df_sucrose.values
+control_df_sucrose_median = control_df_sucrose.values
 
 withdrawal_df_sucrose = withdrawal_df_sucrose.drop(columns='class')
-withdrawal_df_sucrose_mean = withdrawal_df_sucrose.values
+withdrawal_df_sucrose_median = withdrawal_df_sucrose.values
 
 relapse_df_sucrose = relapse_df_sucrose.drop(columns='class')
-relapse_df_sucrose_mean = relapse_df_sucrose.values
+relapse_df_sucrose_median = relapse_df_sucrose.values
 
 
-mean_withdrawal_df_sucrose =  withdrawal_df_sucrose_mean - control_df_sucrose_mean
-mean_relapse_df_sucrose =  relapse_df_sucrose_mean - control_df_sucrose_mean
+median_withdrawal_df_sucrose =  withdrawal_df_sucrose_median - control_df_sucrose_median
+median_relapse_df_sucrose =  relapse_df_sucrose_median - control_df_sucrose_median
 
-mean_with_and_relapse_df_sucrose = withdrawal_df_sucrose_mean - relapse_df_sucrose_mean
-
-
-mean_withdrawal_df_opioids =  withdrawal_df_opioids_mean - control_df_opioids_mean
-mean_relapse_df_opioids =  relapse_df_opioids_mean - control_df_opioids_mean
-
-mean_with_and_relapse_df_opioids = withdrawal_df_opioids_mean - relapse_df_opioids_mean
+median_with_and_relapse_df_sucrose = withdrawal_df_sucrose_median - relapse_df_sucrose_median
 
 
-mean_withdrawal_df_sucrose = pd.DataFrame(mean_withdrawal_df_sucrose)
-mean_withdrawal_df_sucrose.rename(index=row_mapping, inplace=True)
+median_withdrawal_df_opioids =  withdrawal_df_opioids_median - control_df_opioids_median
+median_relapse_df_opioids =  relapse_df_opioids_median - control_df_opioids_median
 
-mean_relapse_df_sucrose = pd.DataFrame(mean_relapse_df_sucrose)
-mean_relapse_df_sucrose.rename(index=row_mapping, inplace=True)
+median_with_and_relapse_df_opioids = withdrawal_df_opioids_median - relapse_df_opioids_median
 
-mean_with_rel_df_sucrose = pd.DataFrame(mean_with_and_relapse_df_sucrose) #
-mean_with_rel_df_sucrose.rename(index=row_mapping, inplace=True)
 
-mean_withdrawal_df_opioids = pd.DataFrame(mean_withdrawal_df_opioids)
-mean_withdrawal_df_opioids.rename(index=row_mapping, inplace=True)
+median_withdrawal_df_sucrose = pd.DataFrame(median_withdrawal_df_sucrose)
+median_withdrawal_df_sucrose.rename(index=row_mapping, inplace=True)
 
-mean_relapse_df_opioids = pd.DataFrame(mean_relapse_df_opioids)
-mean_relapse_df_opioids.rename(index=row_mapping, inplace=True)
+median_relapse_df_sucrose = pd.DataFrame(median_relapse_df_sucrose)
+median_relapse_df_sucrose.rename(index=row_mapping, inplace=True)
 
-mean_with_rel_df_df_opioids = pd.DataFrame(mean_with_and_relapse_df_opioids)
-mean_with_rel_df_df_opioids.rename(index=row_mapping, inplace=True)
+median_with_rel_df_sucrose = pd.DataFrame(median_with_and_relapse_df_sucrose) #
+median_with_rel_df_sucrose.rename(index=row_mapping, inplace=True)
+
+median_withdrawal_df_opioids = pd.DataFrame(median_withdrawal_df_opioids)
+median_withdrawal_df_opioids.rename(index=row_mapping, inplace=True)
+
+median_relapse_df_opioids = pd.DataFrame(median_relapse_df_opioids)
+median_relapse_df_opioids.rename(index=row_mapping, inplace=True)
+
+median_with_rel_df_opioids = pd.DataFrame(median_with_and_relapse_df_opioids)
+median_with_rel_df_opioids.rename(index=row_mapping, inplace=True)
 # # Calculate the difference between control and withdrawal/relapse
 # heatmap_data = control_df.subtract(withdrawal_df).append(control_df.subtract(relapse_df))
 
-# # Create the heatmap
+# # heatmap
 # plt.figure(figsize=(10, 6))
 # sns.heatmap(heatmap_data, cmap='coolwarm', annot=True, fmt=".3f", linewidths=.5)
 # plt.title('Heatmap: Control - Withdrawal/Relapse')
 # plt.show()
 
 
-combined_df_sucrose = pd.concat([mean_withdrawal_df_sucrose, mean_relapse_df_sucrose, mean_with_rel_df_sucrose],
+combined_df_sucrose = pd.concat([median_withdrawal_df_sucrose, median_relapse_df_sucrose, median_with_rel_df_sucrose],
                                 keys=['sucrose withdrawal vs control', 'sucrose relapse vs control', 'sucrose withdrawal vs relapse'])
-combined_df_opioids = pd.concat([mean_withdrawal_df_opioids, mean_relapse_df_opioids, mean_with_rel_df_df_opioids],
+combined_df_opioids = pd.concat([median_withdrawal_df_opioids, median_relapse_df_opioids, median_with_rel_df_opioids],
                                 keys=['heroin withdrawal vs control', 'heroin relapse vs control','heroin withdrawal vs relapse'])
 column_mapping = {0: 'AC', 1: 'DM', 2: 'LAT', 3: 'VM', 4: 'PC'}
-
-# Rename index
 
 
 #combined_df_sucrose.index.set_levels([row_mapping[idx] for idx in combined_df_sucrose.index.levels[0]], level=0, inplace=True)
@@ -156,7 +154,6 @@ level_names = combined_df.index.get_level_values(0).unique().tolist()
 heatmap_data = combined_df.unstack()
 # print("heatmap_data", heatmap_data)
 heatmap_data.iloc[[0,1,2]] = heatmap_data.iloc[[1,0,2]].values 
-
 heatmap_data.iloc[[3,4,5]] = heatmap_data.iloc[[4,3,5]].values
 
 # Switching names of rows
